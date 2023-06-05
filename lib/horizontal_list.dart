@@ -17,6 +17,12 @@ class _MyHorizontalListState extends State<MyHorizontalList> {
       title: 'Nested Horizontal ListView in ExpansionTile',
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
           title: const Text('Nested Horizontal ListView in ExpansionTile'),
         ),
         body: ListView.builder(
@@ -25,7 +31,7 @@ class _MyHorizontalListState extends State<MyHorizontalList> {
             return ExpansionTile(
               title: Text('Item ${numberList[index]}'),
               children: <Widget>[
-                Container(
+                SizedBox(
                   height: 200,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -33,11 +39,11 @@ class _MyHorizontalListState extends State<MyHorizontalList> {
                     itemBuilder: (BuildContext context, int subIndex) {
                       return Container(
                         width: 150,
-                        margin: EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(8),
                         color: Colors.blue,
                         child: Center(
                           child: Text(' ${expansionTitlesItem[subIndex]}',
-                              style: TextStyle(color: Colors.white)),
+                              style: const TextStyle(color: Colors.white)),
                         ),
                       );
                     },

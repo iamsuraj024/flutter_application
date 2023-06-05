@@ -18,6 +18,12 @@ class _MyVerticalListState extends State<MyVerticalList> {
       title: 'Three-layered Expansion List',
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
           title: const Text('Three-layered Expansion List'),
         ),
         body: ListView.builder(
@@ -39,7 +45,8 @@ class _MyVerticalListState extends State<MyVerticalList> {
                           shrinkWrap: true,
                           physics: const ClampingScrollPhysics(),
                           itemCount: secondLevelItems.length,
-                          itemBuilder: (BuildContext context, int innerMostIndex) {
+                          itemBuilder:
+                              (BuildContext context, int innerMostIndex) {
                             return ListTile(
                               title: Text(
                                   'Third Layer ${numberList[index]} ${secondLevelItems[subIndex]} ${finalLevelItems[innerMostIndex]}'),
