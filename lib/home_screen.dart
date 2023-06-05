@@ -21,7 +21,7 @@ class MyHomePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Add your button 2 functionality here
+                  Navigator.pushNamed(context, '/third');
                 },
                 child: const Text('Horizontal List'),
               ),
