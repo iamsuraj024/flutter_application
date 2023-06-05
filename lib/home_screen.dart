@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Add your button 3 functionality here
+                  Navigator.pushNamed(context, '/fourth');
                 },
                 child: const Text('Extras'),
               ),
